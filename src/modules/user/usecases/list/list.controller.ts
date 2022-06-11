@@ -1,5 +1,6 @@
 import { Controller, Get } from '@nestjs/common';
-import { UsersRepositoryImpl } from 'src/modules/user/infrastructure/orm/repositories/users.repository';
+
+import { UsersRepositoryImpl } from '@modules/user/infrastructure/orm/repositories/users.repository';
 
 @Controller('/users')
 export class ListUsersController {

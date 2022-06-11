@@ -1,8 +1,9 @@
-import { CreateUserDTO } from 'src/modules/user/domain/dtos/create-user';
-import { User } from 'src/modules/user/domain/entities/user';
 import { v4 as uuid } from 'uuid';
-import { UsersRepository } from 'src/modules/user/domain/repositories/users.repository';
-import { Maybe } from 'src/common/types/maybe';
+
+import { Maybe } from '@common/types/maybe';
+import { CreateUserDTO } from '@modules/user/domain/dtos/create-user';
+import { User } from '@modules/user/domain/entities/user';
+import { UsersRepository } from '@modules/user/domain/repositories/users.repository';
 
 class UsersRepositoryImpl implements UsersRepository {
   private users: User[] = [];

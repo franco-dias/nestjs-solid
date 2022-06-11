@@ -1,4 +1,5 @@
 import { Maybe } from 'src/common/types/maybe';
+
 import { CreateUserDTO } from '../dtos/create-user';
 import { User } from '../entities/user';
 
