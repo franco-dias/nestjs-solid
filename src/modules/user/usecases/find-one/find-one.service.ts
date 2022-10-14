@@ -1,12 +1,16 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Inject, Injectable, NotFoundException } from '@nestjs/common';
 
 import { Maybe } from '@common/types/maybe';
 import { User } from '@modules/user/domain/entities/user';
+import { UsersRepositoryToken } from '@modules/user/domain/repositories/users.repository';
 import { UsersRepositoryImpl } from '@modules/user/infrastructure/orm/repositories/users.repository';
 
 @Injectable()
 export class FindOneService {
-  constructor(private usersRepository: UsersRepositoryImpl) {}
+  constructor(
+    @Inject(UsersRepositoryToken)
+    private usersRepository: UsersRepositoryImpl,
+  ) {}
 
   execute(id: string): Maybe<User> {
     const user = this.usersRepository.getById(id);

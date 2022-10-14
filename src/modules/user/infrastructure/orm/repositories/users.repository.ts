@@ -5,6 +5,7 @@ import { CreateUserDTO } from '@modules/user/domain/dtos/create-user';
 import { User } from '@modules/user/domain/entities/user';
 import { UsersRepository } from '@modules/user/domain/repositories/users.repository';
 
+/* Simulates an ORM implementation */
 class UsersRepositoryImpl implements UsersRepository {
   private users: User[] = [];
 

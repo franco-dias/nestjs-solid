@@ -1,7 +1,7 @@
-import Joi from 'joi';
+import * as Yup from 'yup';
 
-export const createUserSchema = Joi.object({
-  name: Joi.string().required(),
-  email: Joi.string().required(),
-  password: Joi.string().required().min(8),
+export const createUserSchema = Yup.object().shape({
+  name: Yup.string().required(),
+  email: Yup.string().required(),
+  password: Yup.string().required().min(8),
 });

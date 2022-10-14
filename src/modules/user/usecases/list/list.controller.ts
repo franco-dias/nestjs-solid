@@ -1,13 +1,13 @@
 import { Controller, Get } from '@nestjs/common';
 
-import { UsersRepositoryImpl } from '@modules/user/infrastructure/orm/repositories/users.repository';
+import { ListUsersService } from './list.service';
 
 @Controller('/users')
 export class ListUsersController {
-  constructor(private usersRepository: UsersRepositoryImpl) {}
+  constructor(private listUsersService: ListUsersService) {}
 
   @Get()
   listUsers() {
-    return this.usersRepository.list();
+    return this.listUsersService.execute();
   }
 }

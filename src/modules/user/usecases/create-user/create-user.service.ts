@@ -1,12 +1,19 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
+
+import {
+  UsersRepository,
+  UsersRepositoryToken,
+} from '@modules/user/domain/repositories/users.repository';
 
 import { CreateUserDTO } from '../../domain/dtos/create-user';
 import { User } from '../../domain/entities/user';
-import { UsersRepositoryImpl } from '../../infrastructure/orm/repositories/users.repository';
 
 @Injectable()
 export class CreateUserService {
-  constructor(private usersRepository: UsersRepositoryImpl) {}
+  constructor(
+    @Inject(UsersRepositoryToken)
+    private usersRepository: UsersRepository,
+  ) {}
 
   execute(data: CreateUserDTO): User {
     const user = this.usersRepository.create(data);
