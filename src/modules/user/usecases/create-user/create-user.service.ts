@@ -15,8 +15,8 @@ export class CreateUserService {
     private usersRepository: UsersRepository,
   ) {}
 
-  execute(data: CreateUserDTO): User {
-    const user = this.usersRepository.create(data);
+  async execute(data: CreateUserDTO): Promise<User> {
+    const user = await this.usersRepository.create(data);
     return user;
   }
 }

@@ -6,7 +6,7 @@ import { User } from '../entities/user';
 export const UsersRepositoryToken = 'UsersRepository';
 
 export interface UsersRepository {
-  list(): User[];
-  create(data: CreateUserDTO): User;
-  getById(id: string): Maybe<User>;
+  list(): Promise<User[]>;
+  create(data: CreateUserDTO): Promise<User>;
+  getById(id: number): Promise<Maybe<User>>;
 }

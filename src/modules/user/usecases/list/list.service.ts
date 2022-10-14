@@ -13,7 +13,7 @@ export class ListUsersService {
   ) {}
 
   async execute() {
-    const list = this.usersRepository.list();
+    const list = await this.usersRepository.list();
     return list;
   }
 }

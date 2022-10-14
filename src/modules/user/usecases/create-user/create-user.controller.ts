@@ -1,6 +1,6 @@
 import { Body, Controller, Post, UsePipes } from '@nestjs/common';
 
-import { PayloadValidatorPipe } from '@pipes/payload-validator.pipe';
+import { PayloadValidatorPipe } from '@common/pipes/payload-validator.pipe';
 
 import { CreateUserService } from './create-user.service';
 import { createUserSchema } from './create-user.util';

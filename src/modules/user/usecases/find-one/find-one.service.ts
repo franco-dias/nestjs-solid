@@ -12,8 +12,8 @@ export class FindOneService {
     private usersRepository: UsersRepositoryImpl,
   ) {}
 
-  execute(id: string): Maybe<User> {
-    const user = this.usersRepository.getById(id);
+  async execute(id: number): Promise<Maybe<User>> {
+    const user = await this.usersRepository.getById(id);
     if (!user) {
       throw new NotFoundException('User not found');
     }

@@ -10,11 +10,11 @@ import { userTestData } from './test-data/users';
 class MockUsersRepository implements UsersRepository {
   private users: User[] = userTestData.list;
 
-  list(): User[] {
+  async list(): Promise<User[]> {
     return this.users;
   }
 
-  create(data: CreateUserDTO): User {
+  async create(data: CreateUserDTO): Promise<User> {
     const { email, name, password } = data;
     const user = new User();
     Object.assign(user, { name, email, password, id: uuid() });
@@ -22,7 +22,7 @@ class MockUsersRepository implements UsersRepository {
     return user;
   }
 
-  getById(id: string): Maybe<User> {
+  async getById(id: number): Promise<Maybe<User>> {
     return this.users.find((user) => user.id === id);
   }
 }
