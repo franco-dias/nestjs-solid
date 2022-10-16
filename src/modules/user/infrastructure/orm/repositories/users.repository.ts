@@ -2,8 +2,8 @@ import { Injectable } from '@nestjs/common';
 
 import { PrismaService } from '@common/services/prisma.service';
 import { Maybe } from '@common/types/maybe';
-import { CreateUserDTO } from '@modules/user/domain/dtos/create-user';
-import { User } from '@modules/user/domain/entities/user';
+import { CreateUserDTO } from '@modules/user/domain/dtos/create-user.dto';
+import { User } from '@modules/user/domain/entities/user.entity';
 import { UsersRepository } from '@modules/user/domain/repositories/users.repository';
 
 /* Simulates an ORM implementation */
@@ -18,11 +18,14 @@ class UsersRepositoryImpl implements UsersRepository {
 
   async create(data: CreateUserDTO): Promise<User> {
     const { email, name, password } = data;
-    const user = await this.prisma.user.create({
-      data: { email, name, password },
-    });
-
-    return user;
+    try {
+      const user = await this.prisma.user.create({
+        data: { email, name, password },
+      });
+      return user;
+    } catch (e) {
+      console.log(e);
+    }
   }
 
   async getById(id: number): Promise<Maybe<User>> {

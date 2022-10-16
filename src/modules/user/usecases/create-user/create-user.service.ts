@@ -5,8 +5,8 @@ import {
   UsersRepositoryToken,
 } from '@modules/user/domain/repositories/users.repository';
 
-import { CreateUserDTO } from '../../domain/dtos/create-user';
-import { User } from '../../domain/entities/user';
+import { CreateUserDTO } from '../../domain/dtos/create-user.dto';
+import { User } from '../../domain/entities/user.entity';
 
 @Injectable()
 export class CreateUserService {

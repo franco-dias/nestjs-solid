@@ -1,8 +1,8 @@
 import { v4 as uuid } from 'uuid';
 
 import { Maybe } from '@common/types/maybe';
-import { CreateUserDTO } from '@modules/user/domain/dtos/create-user';
-import { User } from '@modules/user/domain/entities/user';
+import { CreateUserDTO } from '@modules/user/domain/dtos/create-user.dto';
+import { User } from '@modules/user/domain/entities/user.entity';
 import { UsersRepository } from '@modules/user/domain/repositories/users.repository';
 
 import { userTestData } from './test-data/users';

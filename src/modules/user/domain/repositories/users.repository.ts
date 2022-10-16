@@ -1,7 +1,7 @@
 import { Maybe } from 'src/common/types/maybe';
 
-import { CreateUserDTO } from '../dtos/create-user';
-import { User } from '../entities/user';
+import { CreateUserDTO } from '../dtos/create-user.dto';
+import { User } from '../entities/user.entity';
 
 export const UsersRepositoryToken = 'UsersRepository';
 

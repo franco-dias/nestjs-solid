@@ -1,10 +1,11 @@
-import { Controller, Get, Header } from '@nestjs/common';
-import { I18n, I18nContext } from 'nestjs-i18n';
+import { Controller, Get } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 
 import { TranslationService } from '@common/services/i18n.service';
 
 import { ListUsersService } from './list.service';
 
+@ApiTags('Users')
 @Controller('/users')
 export class ListUsersController {
   constructor(

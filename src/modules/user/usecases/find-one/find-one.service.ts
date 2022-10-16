@@ -1,7 +1,7 @@
 import { Inject, Injectable, NotFoundException } from '@nestjs/common';
 
 import { Maybe } from '@common/types/maybe';
-import { User } from '@modules/user/domain/entities/user';
+import { User } from '@modules/user/domain/entities/user.entity';
 import { UsersRepositoryToken } from '@modules/user/domain/repositories/users.repository';
 import { UsersRepositoryImpl } from '@modules/user/infrastructure/orm/repositories/users.repository';
 
