@@ -1,0 +1,18 @@
+version: "1.0"
+
+services:
+  api_db:
+    image: postgres:14.2-alpine
+    container_name: api_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: docker
+      POSTGRES_DB: prisma_test
+    ports:
+      - "5432:5432"
+    expose:
+      - "5432"
+    volumes: 
+      - prisma_test:/var/lib/postgresql/data
+volumes:
+  prisma_test:
